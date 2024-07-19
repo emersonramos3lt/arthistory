@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+
+body {
+    background-color: #E9D7C9;
+    font-family: "Merriweather", serif; 
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 a {
+    text-decoration: none;
+    color: #000;
+}
+
+header .h1-span {
+    /*color: #9D8420; */
+    color: #4E6151;
+}
+
+nav #mainMenu {
+    height: 100vh;
+    position: fixed;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #E9D7C9;
+    filter: opacity(90%);
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 1000;
+    transition: top 1s ease 0s;
+}
+
+nav #mainMenu #closeMenu {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 2.5rem;
+    cursor: pointer;
+}
+
+nav #openMenu {
+    font-size: 2.5rem;
+    cursor: pointer;
+    margin: 1rem;
+    display: block;
+}
+
+nav #closeMenu, #openMenu {
+    transition: all .2s;
+}
+
+nav #closeMenu:hover, #openMenu:hover {
+    color: #4E6151;
+}
+
+nav #mainMenu li {
+    list-style-type: none;
+    margin-bottom: 2rem;
+}
+
+nav #mainMenu li a {
+    font-size: 4rem;
+    text-decoration: none;
+    color: #000;
+    transition: all .4s;
+}
+
+nav #mainMenu li a:hover {
+    position: relative;
+    color: #4E6151;
+}
+
+nav a::before {
+    content: "";
+    width: 100%;
+    height: 2px;
+    background-color: #4E6151;
+    bottom: 0;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform .4s ease-in-out;
+}
+
+nav a:hover::before {
+    position: absolute;
+    visibility: visible;
+    transform: scaleX(1);
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+
+    max-width: 800px;
+    margin: auto;
+    margin-bottom: 3.5rem;
+}
+
+main img {
+    width: 500px;
+}
+
+footer {
+    max-width: 1000px;
+}
+
+footer a {
+    text-decoration: none;
+    color: #000;
+    transition: all .4s;
+    margin-right: 10px;
+}
+
+footer a:hover {
+    position: relative;
+    color: #4E6151;
+}
+
+footer a::before {
+    content: "";
+    width: 100%;
+    height: 2px;
+    left: 0;
+    background-color: #4E6151;
+    bottom: 0;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform .4s ease-in-out;
+}
+
+footer a:hover::before {
+    position: absolute;
+    visibility: visible;
+    transform: scaleX(1);
+}
+
+@media (max-width: 750px) {
+    main {
+        display: flex;
+        flex-direction: column;
+
+        max-width: 350px;
+        margin: auto;
+    }
+
+    main img {
+        display: none;
+    }
+
+    footer {
+        display: flex;
+        place-items: center;
+        max-width: 350px;
+    }
+}
